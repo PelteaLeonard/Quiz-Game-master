@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles/styles.css">
+    <title>Quiz Game</title>
+</head>
+<body>
+    <header>
+        <h1>Guess the capital!</h1>
+        <button data-modal-target="#modal" id="info-btn"><i class="fas fa-circle-question"></i></button>
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="title">Instructions</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>Aim of the game</h3>
+                <p>
+                    This game is all about of guessing the capital of the different countries. You have 20 countries where you need to choose which is the capital of the respective country.
+                    The game test your knowledge about geographical information that you have and if you don't have it to learn about it.
+                </p>
+                <h3>How to play the game</h3>
+                <p>Press play to start the game board</p>
+                <p>You can probably guess the capitals of France and Italy, but how well would you do if you had to come up with capitals of different countries?</p>
+                <p>Let's test it now! </p>
+                <p>Successfully complete 20 rounds to win the game and be notified of your point that you would take for each good answer and you would be able to put your name on the highscore list.</p>
+            </div>
+        </div>
+        <div id="overlay"></div>
+    </header>
+        <section id="home">
+            <div class="container">
+                    <h2>Are you ready?</h2>
+                    <button id="play-btn"> Play</button>>
+                    <button id="scores-btn"> High Score</button>>
+            </div>
+        </section>
+
+        <section id="quiz" class="hidden">
+            <div class="container">
+                <div id="game" class="justify-center flex-row">
+                    <div id="hud">
+                        <div class="hud-item">
+                            <p id="progressText" class="hub-prefix">
+                                Question
+                            </p>
+                            <div id="progressBarr">
+                                <div id="progressBarrFull">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hud-item">
+                            <p class="hud-prefix">Score</p>
+                            <h1 class="hud-main-text" id="score">0</h1>
+                        </div>
+                    </div>
+                    <h2 id="question">What is the answer to this question?</h2>
+                    <div class="choice-container">
+                        <p class="choice-prefix">A</p>
+                        <p class="choice-text" data-number="1">Choice 1</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix">B</p>
+                        <p class="choice-text" data-number="2">Choice 2</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix">C</p>
+                        <p class="choice-text" data-number="3">Choice 3</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix">D</p>
+                        <p class="choice-text" data-number="4">Choice 4</p>
+                    </div>
+                </div>
+            </div>
+            <button id="home-btn"><i class="fa fa-home"></i></button>
+            <button id="next-btn"><i class="fa-solid fa-forward"></i></button>
+        </section>
+
+        <section id="results" class="hidden">
+            <div class="container">
+                <div id="end" class="flex-center flex-column">
+                    <h1 id="finalScore"></h1>
+                    <div class="end-form-container">
+                        <h2 id="end-text">Enter your name below to save your score!</h2>
+                        <input type="text" name="name" id="username" placeholder="Enter your name">
+                        <button class="btn" id="saveScoreBtn" disabled>Save</button>
+                    </div>
+                </div> 
+            </div>
+            <button id="results-home-btn"><i class="fa fa-home"></i></button>
+        </section>
+
+        <section id="scores" class="hidden">
+            <div class="container">
+                <div id="highScores" class="flex-centre flex-column"  >
+                    <h2 id="finalscore">High Score</h2>
+                    <ul id="highScoresList"></ul>
+                </div>
+            </div>
+            <button id="scores-home-btn"><i class="fas fa-home"></i></button>
+        </section>
+    <footer id="footer">
+        &copy;Made by Leonard Peltea.
+      </footer>
+    <script src="static/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/4f73f23e6f.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
