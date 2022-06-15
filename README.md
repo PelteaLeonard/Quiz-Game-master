@@ -88,7 +88,7 @@ Added all files to the Staging area (Git) using the git add . command.
 
 Committed the files to Git using the git commit -m "Initial commit" command.
 
-Created a new repository in GitHub called 'monkees-milestone-project-one'.
+Created a new repository in GitHub called 'Quiz-Game-master'.
 
 Copied the below code from GitHub into the terminal window in my Cloud9 workspace:
 
