@@ -12,7 +12,6 @@ const quizSection = document.getElementById('quiz');
 const resultsSection = document.getElementById('results');
 const scoresSection = document.getElementById('scores');
 const highScores = [];
-const scoresContainer = document.querySelector('#scores div')
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
@@ -267,9 +266,7 @@ const questions = [
             choice4: 'Patra',
             answer: 1,
     }
-]
-
-
+];
 
 const SCORE_POINTS = 100;
 const MAX_QUESTIONS = 20;
@@ -279,7 +276,6 @@ const startGame =() => {
     score = 0;
     availableQuestions = [...questions];
     scoreText.innerText = score;
-    finalscore.innerText = score;
     getNewQuestion();
 };
 
@@ -287,18 +283,18 @@ const startGame =() => {
 const getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         return showResults();
-    };
+    }
 
-    questionCounter++
-    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
-    progressBarrFull.style.width = `${(questionCounter/MAX_QUESTIONS) *100}%`
+    questionCounter++;
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
+    progressBarrFull.style.width = `${(questionCounter/MAX_QUESTIONS) *100}%`;
 
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionsIndex];
     question.innerText = currentQuestion.question;
 
     choices.forEach(choice => {
-        const number = choice.dataset['number'];
+        const number = choice.dataset .number;
         choice.innerText = currentQuestion['choice' + number];
     });
 
@@ -313,13 +309,13 @@ choices.forEach(choice => {
 
         acceptingAnswers = false;
         const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset['number'];
+        const selectedAnswer = selectedChoice.dataset .number;
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
         if(classToApply === 'correct'){
             incrementScore(SCORE_POINTS);
-        };
+        }
 
         selectedChoice.parentElement.classList.add(classToApply);
 
@@ -330,14 +326,11 @@ choices.forEach(choice => {
     });
 });
 
-incrementScore = num => {
+let incrementScore = num => {
     score += num;
     scoreText.innerText = score;
 };
 
-
-
-const MAX_HIGH_SCORES = 5;
 
 username.addEventListener('keyup', () =>{
     saveScoreBtn.disabled = !username.value;
@@ -362,7 +355,7 @@ const submitScores = () => {
         highScoresList.innerHTML = highScoresListData;
         showHome();
     }
-}
+};
 
 saveScoreBtn.addEventListener('click', submitScores);
     

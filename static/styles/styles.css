@@ -27,6 +27,15 @@ h2{
     margin-top: -13%;
 }
 
+#question{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: -200px;
+    margin-bottom: 180px;
+}
+
 .container{
     justify-content: center;
     width: 100vw;
@@ -121,14 +130,12 @@ h2{
     transform: scale(1.03);
 }
 
-#restart-btn{
-    background: transparent;
+#home-btn{
+   background: rgb(29, 26,26);
 }
 
-#home-btn{
-    background: transparent;
-    text-decoration: none;
-    outline: none;
+#next-btn{
+    background:rgb(29, 26,26);
 }
 
 .fa-home{
@@ -216,7 +223,7 @@ h2{
 #hud{
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin: 30px 0;
 }
 
 .hud-prefix{
@@ -491,6 +498,23 @@ h3{
     display: none;
 }
 
+@media  screen and (max-width: 980px){
+    .fa-home{
+        font-size: 30px;
+        margin-top: -119.6%;
+        margin-left: 30%;
+    }
+    .fa-forward{
+        font-size: 30px;
+        margin-top: -119.6%;
+        margin-left: 64%;
+    }
+    #question{
+        margin-bottom: 190px;
+    }
+
+}
+
 @media  screen and (max-width: 768px) {
     #footer{
         font-size: 15px;
@@ -637,6 +661,10 @@ h3{
     h2{
         font-size: 15px;
         margin-top: -13%;
+    }
+    #question{
+        margin-top: -100px;
+        margin-bottom: 50px;
     }
     #play-btn{
         margin-top: -5%;
